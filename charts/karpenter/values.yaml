@@ -75,6 +75,8 @@ controller:
     location: ""
     # -- The GCP cluster name.
     clusterName: ""
+    # -- The GCP service account to use for default node pool. If not set, uses <project-id>-compute@developer.gserviceaccount.com.
+    defaultNodePoolServiceAccount: ""
     # -- The VM memory overhead as a percent that will be subtracted from the total memory for all instance types. The value of `0.075` equals to 7.5%.
     vmMemoryOverheadPercent: 0.065
     # -- The maximum length of a batch window. The longer this is, the more pods we can consider for provisioning at one

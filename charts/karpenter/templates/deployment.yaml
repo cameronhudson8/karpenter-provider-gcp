@@ -88,6 +88,10 @@ spec:
                   resource: limits.memory
             - name: FEATURE_GATES
               value: "SpotToSpotConsolidation={{ .Values.controller.featureGates.spotToSpotConsolidation }},NodeOverlay={{ .Values.controller.featureGates.nodeOverlay }}"
+            {{- with .Values.controller.settings.defaultNodePoolServiceAccount }}
+            - name: DEFAULT_NODEPOOL_SERVICE_ACCOUNT
+              value: "{{ . }}"
+            {{- end }}
             {{- with .Values.controller.settings.batchMaxDuration }}
             - name: BATCH_MAX_DURATION
               value: "{{ . }}"
